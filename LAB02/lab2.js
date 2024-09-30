@@ -1,4 +1,3 @@
-
 // Import the prompt package to get user input
 const prompt = require("prompt");
 
