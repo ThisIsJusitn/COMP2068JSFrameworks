@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const indexRouter = require("./routes/index");
+const indexRouter = require("./routes/index"); // Ensure this path is correct
 
 const app = express();
 app.set("views", path.join(__dirname, "views"));
