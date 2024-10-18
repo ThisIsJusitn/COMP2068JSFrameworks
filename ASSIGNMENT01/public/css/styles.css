@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #f7f4f3;
+    background-color: #acf0fa;
     color: #333;
     text-align: center;
     margin: 0;
@@ -31,7 +31,7 @@ h1,
 h2 {
     font-family: 'Raleway Dots', cursive;
     font-size: 3rem;
-    color: #8fd9a8;
+    color: #000000;
     text-transform: uppercase;
     margin-top: 2rem;
 }

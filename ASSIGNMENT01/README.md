@@ -1,0 +1,1 @@
+This is my personal portfolio website. I built it using Node.js, Express, and Handlebars. It includes four pages: Home, About Me, Projects, and Contact Me. The design is colorful and fun, and the site is live on a cloud platform. It shows who I am, highlights my projects, and gives ways for people to contact me.
