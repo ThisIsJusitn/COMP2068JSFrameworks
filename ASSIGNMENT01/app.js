@@ -10,8 +10,10 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
-app.use("/", require("./routes/index")); // Your main route
-app.use("/about", require("./routes/about")); // Example route
+app.use("/", require("./routes/index")); // Home page
+app.use("/about", require("./routes/about")); // About Me page
+app.use("/projects", require("./routes/projects")); // Projects page
+app.use("/contact", require("./routes/contact")); // Contact Me page
 
 // Server
 const PORT = process.env.PORT || 3000;

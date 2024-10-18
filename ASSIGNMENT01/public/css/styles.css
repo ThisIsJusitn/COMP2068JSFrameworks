@@ -1,6 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     color: #333;
     text-align: center;
+}
+
+header {
+    background-color: #444;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
 }
