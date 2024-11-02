@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "GitHub for class",
   "main": "index.js",
-  "scripts": { 
+  "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "connect": "^3.7.0",
+    "mongoose": "^8.8.0",
     "prompt": "^1.3.0"
   }
 }

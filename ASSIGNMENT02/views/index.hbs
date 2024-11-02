@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hockey Scoreboard</title>
+</head>
+
+<body>
+    <h1>Hockey Scoreboard</h1>
+
+    <!-- Search Form -->
+    <form action="/search" method="GET">
+        <input type="text" name="q" placeholder="Search by team name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Add New Game Form -->
+    <h2>Add New Game</h2>
+    <form action="/games" method="POST" enctype="multipart/form-data">
+        <input type="text" name="team1" placeholder="Team 1" required>
+        <input type="file" name="team1Logo" accept="image/*">
+        <input type="text" name="team2" placeholder="Team 2" required>
+        <input type="file" name="team2Logo" accept="image/*">
+        <button type="submit">Add Game</button>
+    </form>
+
+    <!-- Display Games -->
+    <ul>
+        {{#each games}}
+        <li>
+            <img src="{{team1Logo}}" alt="{{team1}} Logo" width="50">
+            {{team1}}: {{score1}} vs
+            <img src="{{team2Logo}}" alt="{{team2}} Logo" width="50">
+            {{team2}}: {{score2}}
+            <form action="/games/{{_id}}/score" method="POST">
+                <input type="number" name="score1" value="{{score1}}">
+                <input type="number" name="score2" value="{{score2}}">
+                <button type="submit">Update Score</button>
+            </form>
+            <form action="/games/{{_id}}/delete" method="POST">
+                <button type="submit">Delete Game</button>
+            </form>
+        </li>
+        {{
