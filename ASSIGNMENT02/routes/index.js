@@ -63,6 +63,11 @@ router.get("/search", async (req, res) => {
 });
 
 // GitHub Auth Routes
+
+
+/////// Fill in git hub info later///////
+
+
 router.get(
   "/auth/github",
   passport.authenticate("github", { scope: ["user:email"] })
