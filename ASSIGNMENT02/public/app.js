@@ -5,6 +5,7 @@ const session = require("express-session");
 const passport = require("passport");
 const GitHubStrategy = require("passport-github2").Strategy;
 const path = require("path");
+const flash = require("connect-flash");
 const indexRouter = require("./routes/index");
 
 dotenv.config();
@@ -32,6 +33,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -51,8 +53,21 @@ passport.use(
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
+// Middleware for flash messages
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
+
 // Routes
 app.use("/", indexRouter);
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render("error", { message: "Something went wrong. Please try again." });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>

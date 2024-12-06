@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .success {
+    color: green;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  form {
+    margin: 20px 0;
+  }
+  
+  input, button {
+    margin: 5px 0;
+  }
+  
+  img {
+    margin-right: 10px;
+  }
+  
