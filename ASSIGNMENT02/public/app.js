@@ -66,7 +66,9 @@ app.use("/", indexRouter);
 // Global Error Handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).render("error", { message: "Something went wrong. Please try again." });
+  res
+    .status(500)
+    .render("error", { message: "Something went wrong. Please try again." });
 });
 
 const PORT = process.env.PORT || 3000;

@@ -42,7 +42,13 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      req.flash("error", errors.array().map((err) => err.msg).join(", "));
+      req.flash(
+        "error",
+        errors
+          .array()
+          .map((err) => err.msg)
+          .join(", ")
+      );
       return res.redirect("/");
     }
 
@@ -88,7 +94,10 @@ router.get("/search", async (req, res) => {
 });
 
 // GitHub Auth Routes
-router.get("/auth/github", passport.authenticate("github", { scope: ["user:email"] }));
+router.get(
+  "/auth/github",
+  passport.authenticate("github", { scope: ["user:email"] })
+);
 router.get(
   "/auth/github/callback",
   passport.authenticate("github", { failureRedirect: "/" }),
